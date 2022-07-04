@@ -12,6 +12,7 @@ const Home = () => {
   return (
     <div className="container">
       <h1>There are {posts.length} in the database</h1>
+      <div className="btn btn-primary">+ Add Post</div>
       <table className="table">
         <thead>
           <th>Title</th>
@@ -21,10 +22,10 @@ const Home = () => {
         <tbody>
           {
             posts.map(post=>
-                <tr>
+                <tr key={post.id}>
                   <td>{post.title}</td>
-                  <td><button className="btn btn-warning">Update</button></td>
-                  <td><button className="btn btn-danger">Delete</button></td>
+                  <td><button className="btn btn-warning btn-sm">Update</button></td>
+                  <td><button className="btn btn-danger btn-sm">Delete</button></td>
                 </tr>
             )
           }
